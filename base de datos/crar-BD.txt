@@ -1,0 +1,125 @@
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Base de datos: `malla_ici`
+--
+CREATE DATABASE `malla_ici` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `malla_ici`;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `asignatura`
+--
+
+CREATE TABLE IF NOT EXISTS `asignatura` (
+  `idAsignatura` varchar(10) NOT NULL DEFAULT '',
+  `nombre` varchar(50) DEFAULT NULL,
+  `semestre` tinyint(3) unsigned NOT NULL,
+  `aprobado` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`idAsignatura`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `asignatura`
+--
+
+INSERT INTO `asignatura` (`idAsignatura`, `nombre`, `semestre`, `aprobado`) VALUES
+('', '', 0, 0),
+('INC100', 'ALGEBRA ELEMENTAL\r\n', 1, 0),
+('INC101', 'CALCULO DIFERENCIAL\r\n', 1, 1),
+('INC102', 'FUNDAMENTOS DE PROGRAMACION\r\n', 1, 1),
+('INC103', 'HISTORIA GENERAL DE LAS CIENCIAS Y LAS TECNOLOGIAS', 1, 1),
+('INC104', 'FORMACION VALORICA PERSONAL\r\n', 1, 1),
+('INC110', 'FISICA\r\n', 2, 1),
+('INC111', 'CALCULO INTEGRAL\r\n', 2, 1),
+('INC112', 'PROGRAMACION I\r\n', 2, 1),
+('INC113', 'INTRODUCCION AL HARDWARE\r\n', 2, 1),
+('INC114', 'FILOSOFIA DE LAS CIENCIAS\r\n', 2, 1),
+('INC200', 'FISICA EXPERIMENTAL\r\n', 3, 1),
+('INC201', 'CALCULO MULTIVARIABLE\r\n', 3, 1),
+('INC202', 'PROGRAMACION II\r\n', 3, 1),
+('INC203', 'SISTEMAS DIGITALES\r\n', 3, 1),
+('INC204', 'ESTRUCTURAS DISCRETAS\r\n', 3, 1),
+('INC205', 'ASIGNATURA ELECTIVA COMPLEMENTARIA I\r\n', 3, 1),
+('INC210', 'ALGEBRA LINEAL\r\n', 4, 1),
+('INC211', 'ESTRUCTURA DE DATOS\r\n', 4, 1),
+('INC212', 'ARQUITECTURA DE COMPUTADORES\r\n', 4, 1),
+('INC213', 'TEORIA DE SISTEMAS\r\n', 4, 1),
+('INC214', 'CONTABILIDAD\r\n', 4, 1),
+('INC215', 'ASIGNATURA ELECTIVA COMPLEMENTARIA II\r\n', 4, 1),
+('INC300', 'ECUACIONES DIFERENCIALES\r\n', 5, 1),
+('INC301', 'ELECTROMAGNETISMO\r\n', 5, 1),
+('INC302', 'ANALISIS Y DISENO DE ALGORITMOS\r\n', 5, 1),
+('INC303', 'TEORIA DE SISTEMAS OPERATIVOS\r\n', 5, 1),
+('INC304', 'FUNDAMENTOS DE INGENIERIA DE SOFTWARE\r\n', 5, 1),
+('INC305', 'INGLES I\r\n', 5, 1),
+('INC310', 'PROBABILIDAD Y ESTADISTICA\r\n', 6, 1),
+('INC311', 'LENGUAJES Y AUTOMATAS\r\n', 6, 1),
+('INC312', 'REDES DE COMPUTADORES\r\n', 6, 1),
+('INC313', 'METODOLOGIAS DE ANALISIS\r\n', 6, 1),
+('INC314', 'ADMINISTRACION EN INFORMATICA\r\n', 6, 1),
+('INC315', 'INGLES II\r\n', 6, 1),
+('INC400', 'FISICA CONTEMPORANEA\r\n', 7, 1),
+('INC401', 'INTERFAZ HOMBRE-MAQUINA\r\n', 7, 1),
+('INC402', 'MODELOS DE DATOS\r\n', 7, 1),
+('INC403', 'TALLER DE SISTEMAS OPERATIVOS\r\n', 7, 1),
+('INC404', 'METODOLOGIAS DE DISENO\r\n', 7, 1),
+('INC405', 'INGLES III\r\n', 7, 1),
+('INC410', 'BIOLOGIA\r\n', 8, 1),
+('INC411', 'DESARROLLO WEB\r\n', 8, 1),
+('INC412', 'SISTEMAS DE BASES DE DATOS\r\n', 8, 1),
+('INC413', 'ARQUITECTURA DE SOFTWARE\r\n', 8, 1),
+('INC414', 'EVALUACION DE PROYECTOS\r\n', 8, 1),
+('INC415', 'LENGUAJES DE PROGRAMACION\r\n', 8, 1),
+('INC500', 'PRUEBAS DE SOFTWARE\r\n', 9, 1),
+('INC501', 'SEMINARIO DE ESPECIALIDAD I\r\n', 9, 1),
+('INC502', 'ASIGNATURA ELECTIVA DE ESPECIALIDAD I\r\n', 9, 1),
+('INC503', 'SISTEMAS DE TELECOMUNICACIONES\r\n', 9, 1),
+('INC504', 'GESTION DE PROYECTOS INFORMATICOS\r\n', 9, 1),
+('INC505', 'INVESTIGACION DE OPERACIONES\r\n', 9, 1),
+('INC510', 'ECONOMIA\r\n', 10, 1),
+('INC511', 'SEMINARIO DE ESPECIALIDAD II\r\n', 10, 1),
+('INC512', 'ASIGNATURA ELECTIVA DE ESPECIALIDAD II\r\n', 10, 1),
+('INC513', 'FUNDAMENTOS DE INTELIGENCIA ARTIFICIAL\r\n', 10, 1),
+('INC514', 'TALLER DE APLICACIONES\r\n', 10, 1),
+('INC515', 'SIMULACION\r\n', 10, 1),
+('INC600', 'ASIGNATURA ELECTIVA DE ESPECIALIDAD III\r\n', 11, 1),
+('INC601', 'SEMINARIO DE TITULO I\r\n', 11, 1),
+('INC602', 'ETICA Y LEGISLACION\r\n', 11, 1),
+('INC610', 'SEMINARIO DE TECNOLOGIA DE INFORMACION Y COMUNICAC', 12, 1),
+('INC611', 'SEMINARIO DE TITULO II', 12, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `requisito`
+--
+
+CREATE TABLE IF NOT EXISTS `requisito` (
+  `idAsignatura` varchar(10) NOT NULL,
+  `idrequisito` varchar(20) NOT NULL,
+  PRIMARY KEY (`idAsignatura`,`idrequisito`),
+  KEY `idrequisito` (`idrequisito`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `requisito`
+--
+
+INSERT INTO `requisito` (`idAsignatura`, `idrequisito`) VALUES
+('INC204', 'INC100'),
+('INC204', 'INC102');
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `requisito`
+--
+ALTER TABLE `requisito`
+  ADD CONSTRAINT `requisito_ibfk_1` FOREIGN KEY (`idrequisito`) REFERENCES `asignatura` (`idAsignatura`);
+--
